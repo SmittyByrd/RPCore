@@ -5,3 +5,16 @@ main: com.github.smittybyrd.rpcore.RPCore
 paperPluginLoader: com.github.smittybyrd.rpcore.RPCoreLoader
 api-version: '1.21.11'
 load: POSTWORLD
+
+permissions:
+  rpcore.walk:
+    description: "Allows use of the /walk command"
+    default: op
+
+commands:
+  walk:
+    description: "Allows a player to walk at a slower speed"
+    usage: /walk
+    aliases: w
+    permission: rpcore.walk
+    permission-message: "You do not have permission to use this command!"
