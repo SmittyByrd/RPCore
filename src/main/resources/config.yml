@@ -1,0 +1,3 @@
+# Enter a value between 1 and 10. Default will be 6.
+# Any value over 10 will increase walking speed from normal.
+walking-speed: 6.0
