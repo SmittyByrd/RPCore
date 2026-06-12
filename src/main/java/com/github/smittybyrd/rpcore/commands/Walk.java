@@ -1,5 +1,4 @@
 package com.github.smittybyrd.rpcore.commands;
-
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.NamedTextColor;
 import org.bukkit.NamespacedKey;
@@ -9,9 +8,7 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-
 import static com.github.smittybyrd.rpcore.config.ConfigManager.getModInput;
-import static com.github.smittybyrd.rpcore.config.ConfigManager.modInput;
 
 public class Walk implements CommandExecutor {
 

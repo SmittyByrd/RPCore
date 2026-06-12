@@ -1,11 +1,7 @@
 package com.github.smittybyrd.rpcore;
-
 import com.github.smittybyrd.rpcore.commands.Walk;
-// import com.github.smittybyrd.rpcore.config.ConfigFile;
 import com.github.smittybyrd.rpcore.config.ConfigManager;
-import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
-
 import static com.github.smittybyrd.rpcore.config.ConfigManager.*;
 
 public final class RPCore extends JavaPlugin {
@@ -18,8 +14,6 @@ public final class RPCore extends JavaPlugin {
         new ConfigManager(this);
 
         System.out.println(getModInput());
-
-        //saveResource("config.yml", false);
 
         getCommand("walk").setExecutor(new Walk());
 
