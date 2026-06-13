@@ -15,7 +15,7 @@ public class Walk implements CommandExecutor {
     boolean toggle = false;
 
     @Override
-    public boolean  onCommand(CommandSender sender, Command command, String label, String [] Args) {
+    public boolean onCommand(CommandSender sender, Command command, String label, String [] Args) {
         if (!(sender instanceof Player)) {
             sender.sendMessage("Only players can execute this command!");
             return true;

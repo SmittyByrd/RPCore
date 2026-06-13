@@ -10,6 +10,9 @@ permissions:
   rpcore.walk:
     description: "Allows use of the /walk command"
     default: op
+  rpcore.admin:
+    description: "Admin commands"
+    default: op
 
 commands:
   walk:
@@ -17,4 +20,10 @@ commands:
     usage: /walk
     aliases: w
     permission: rpcore.walk
+    permission-message: "You do not have permission to use this command!"
+  rpcore:
+    description: "The RPCore admin commands"
+    usage: /rpcore
+    aliases: rpc
+    permission: rpcore.admin
     permission-message: "You do not have permission to use this command!"

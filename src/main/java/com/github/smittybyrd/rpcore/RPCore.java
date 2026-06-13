@@ -1,33 +1,29 @@
 package com.github.smittybyrd.rpcore;
 import com.github.smittybyrd.rpcore.commands.Walk;
+import com.github.smittybyrd.rpcore.commands.rpCommands;
+import com.github.smittybyrd.rpcore.commands.rpTabComplete;
 import com.github.smittybyrd.rpcore.config.ConfigManager;
+import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
-import static com.github.smittybyrd.rpcore.config.ConfigManager.*;
+
+import java.util.Objects;
 
 public final class RPCore extends JavaPlugin {
 
     private static RPCore plugin;
+
+
     @Override
     public void onEnable() {
-        // Plugin startup logic
         plugin = this;
         new ConfigManager(this);
 
-        System.out.println(getModInput());
-
         getCommand("walk").setExecutor(new Walk());
+        Objects.requireNonNull(getCommand("rpcore")).setExecutor(new rpCommands());
+        Objects.requireNonNull(getCommand("rpcore")).setTabCompleter(new rpTabComplete());
 
-    }
+        Bukkit.getLogger().info("[RPCore] Enabled!");
 
-
-    public void onLoad() {
-
-
-    }
-
-    @Override
-    public void onDisable() {
-        // Plugin shutdown logic
     }
 
     public static RPCore pluginGet() {
