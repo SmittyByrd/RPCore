@@ -1,10 +1,12 @@
 name: RPCore
 version: '${version}'
-
 main: com.github.smittybyrd.rpcore.RPCore
 paperPluginLoader: com.github.smittybyrd.rpcore.RPCoreLoader
 api-version: '1.21.11'
 load: POSTWORLD
+
+softdepend:
+  - [MiniMessage]
 
 permissions:
   rpcore.walk:

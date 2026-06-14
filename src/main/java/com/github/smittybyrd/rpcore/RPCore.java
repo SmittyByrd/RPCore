@@ -5,7 +5,6 @@ import com.github.smittybyrd.rpcore.commands.rpTabComplete;
 import com.github.smittybyrd.rpcore.config.ConfigManager;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
-
 import java.util.Objects;
 
 public final class RPCore extends JavaPlugin {
@@ -18,9 +17,13 @@ public final class RPCore extends JavaPlugin {
         plugin = this;
         new ConfigManager(this);
 
-        getCommand("walk").setExecutor(new Walk());
+        //getCommand("walk").setExecutor(new Walk());
         Objects.requireNonNull(getCommand("rpcore")).setExecutor(new rpCommands());
         Objects.requireNonNull(getCommand("rpcore")).setTabCompleter(new rpTabComplete());
+        boolean enableWalk = this.plugin.getConfig().getBoolean("features.enable-walk");
+        if (enableWalk) {
+            getCommand("walk").setExecutor(new Walk());
+        }
 
         Bukkit.getLogger().info("[RPCore] Enabled!");
 
