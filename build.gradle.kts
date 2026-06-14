@@ -10,6 +10,7 @@ repositories {
 
 dependencies {
     compileOnly(libs.paper.api)
+    implementation("net.kyori:adventure-text-minimessage:5.1.1")
 }
 
 java {
